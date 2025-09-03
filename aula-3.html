@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Aula 3 - Programação Web</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-M/mgKk5yL5I6f4dfJ5Zgxcm3Yxw6rGZ4v0HGk3zqgN0tPjv1z5c9/zX8vA9v5hPZrmjWqYr41zvWxUVvhQCl4g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide 1 – Boas-vindas -->
+			<section data-transition="fade">
+				<h2>Resumo da Aula passada</h2>
+				<ul>
+					<li class="fragment fade-in"> <strong>Composição das Tags:</strong>
+						&lt;nome_tag&gt;Conteúdo&lt;/nome_tag&gt;</li>
+					<li class="fragment fade-in"> <strong>Tags Vazias ou tags que não fecham:</strong> &lt;nome_tag&gt;
+					</li>
+					<li class="fragment fade-in"> <strong>Títulos:</strong> &lt;h1&gt; a &lt;h6&gt;</li>
+					<li class="fragment fade-in"> <strong>Parágrafos:</strong> &lt;p&gt;</li>
+					<li class="fragment fade-in"> <strong>Listas:</strong> ordenadas (&lt;ol&gt;) e não ordenadas
+						(&lt;ul&gt;)</li>
+				</ul>
+			</section>
+			<section data-transition="fade">
+				<h2>Aula 3 - Atributos, Links e âncoras, imagens e linha horizontal </h2>
+				<ul>
+					<li class="fragment fade-in"> <strong>Atributos</strong></li>
+					<li class="fragment fade-in"> <strong>Links:</strong> &lt;a&gt;</li>
+					<li class="fragment fade-in"> <strong>Imagens:</strong> &lt;img&gt;</li>
+					<li class="fragment fade-in"> <strong>Linhas Horizontais:</strong> &lt;hr&gt;</li>
+				</ul>
+			</section>
+
+			<!-- Slide 2 – Atributos -->
+			<section data-transition="fade">
+				<h2>Atributos em HTML</h2>
+
+				<section data-transition="fade">
+					Um atributo em HTML é uma informação extra que você adiciona a uma tag para modificar seu
+					comportamento ou fornecer mais detalhes sobre aquele elemento.
+				</section>
+
+				<section data-transition="fade">
+					<h3>Como Funciona?</h3>
+					<ul>
+						<li class="fragment fade-in">Os atributos sempre ficam na tag de abertura</li>
+						<li class="fragment fade-in">Eles tem a estrutura <strong>nome="valor"</strong></li>
+						<li class="fragment fade-in">Permitem personalizar ou especificar algo que a tag vai fazer, sem
+							precisar mudar o conteúdo.</li>
+					</ul>
+
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo:</h3>
+					<pre><code data-line-numbers>
+&lt;p title="Parágrafo de introdução"&gt; 
+	Hoje começamos a aprender sobre atributos em HTML!
+&lt;/p&gt;
+						</code>
+					</pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<p title="Parágrafo de introdução"> Hoje começamos a aprender sobre
+							atributos em HTML!
+						</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo 2:</h3>
+					<pre><code data-line-numbers>
+&lt;p style="color: red;"&gt; 
+	O Texto deste parágrafo é vermelho!
+&lt;/p&gt;
+						</code>
+					</pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<p style="color: red;">
+							O Texto deste parágrafo é vermelho!
+						</p>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<ul>
+						<li class="">
+							<strong>id</strong> – Identifica um elemento único na página.
+						</li>
+						<li class="fragment fade-in">
+							<strong>class</strong> – Agrupa elementos para estilização ou manipulação via CSS/JS.
+						</li>
+						<li class="fragment fade-in">
+							<strong>href</strong> – URL de destino de um link (<code>&lt;a&gt;</code>).
+						</li>
+						<li class="fragment fade-in">
+							<strong>src</strong> – Caminho de uma imagem,mídia ou script js (<code>&lt;img&gt;</code>,
+							<code>&lt;script&gt;</code>).
+						</li>
+						<li class="fragment fade-in">
+							<strong>type</strong> – Especifica o tipo de entrada de um formulário
+							(<code>&lt;input&gt;</code> ou <code>&lt;button&gt;</code>).
+						</li>
+						<li class="fragment fade-in">
+							<strong>placeholder</strong> – Texto de sugestão dentro de campos de formulário
+							(<code>&lt;input&gt;</code>).
+						</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Atributo class</h3>
+					<p>O atributo <code>class</code> permite atribuir um ou mais grupos de estilo a um elemento, que
+						podem ser usados pelo CSS ou manipulados via JavaScript.</p>
+
+					<ul>
+						<li class="fragment fade-in"><strong>Permite estilizar múltiplos elementos de forma
+								igual</strong></li>
+						<li class="fragment fade-in"><strong>Facilita manipulação via JavaScript</strong></li>
+					</ul>
+
+					<!-- Exemplo prático -->
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo</h3>
+					<div class="fragment fade-in">
+						<pre><code data-line-numbers>
+&lt;!-- HTML --&gt;
+&lt;ol&gt;
+	&lt;li class="destaque"&gt;O parágrafo terá o texto azul.&lt;/li&gt;
+	&lt;li class="importante"&gt;O texto será em negrito.&lt;/li&gt;
+	&lt;li class="destaque importante"&gt;Este estará em negrito e azul.&lt;/li&gt;	
+&lt;/ol&gt;
+</code></pre>
+						<pre class="fragment fade-in"><code data-line-numbers="" class="language-css">
+#CSS	
+.destaque { 
+	color: blue; 
+}
+.importante { 
+	font-weight: bold; 
+}
+	</code></pre>
+					</div>
+
+				</section>
+				<section data-transition="fade">
+					<h3>Saida:</h3>
+					<div class="fragment fade-in">
+						<ol>
+							<li style="color:blue;">O parágrafo terá o texto azul.</li>
+							<li style="font-weight: bolder;">O texto será em negrito.</li>
+							<li style="color: blue; font-weight: bolder;">Este estará em negrito e azul.</li>
+						</ol>
+					</div>
+
+				</section>
+				<section data-transition="fade">
+					<h2>O Atributo <code>id</code></h2>
+
+					<p>O atributo <code>id</code> identifica um único elemento na página.
+						É muito útil para <strong>CSS</strong> e <strong>JavaScript</strong>.</p>
+
+					<ul>
+						<li class="fragment fade-in"><strong>Deve ser único</strong> – não pode repetir na mesma página
+						</li>
+						<li class="fragment fade-in"><strong>Usado para CSS</strong> – estilizar um elemento específico
+						</li>
+						<li class="fragment fade-in"><strong>Usado para JavaScript</strong> – manipular elementos
+							diretamente</li>
+						<li class="fragment fade-in"><strong>Referência em links</strong> – criar âncoras internas na
+							página</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo - Manipular directamente um elemento via Js</h3>
+					<pre><code data-line-numbers>
+&lt;!-- HTML --&gt;
+&lt;h1 id="titulo-principal"&gt;Bem-vindo ao meu site!&lt;/h1&gt;
+						</code></pre>
+					<pre class="fragment fade-in"><code data-line-numbers>
+// JavaScript
+const idH1 = document.getElementById("titulo-principal");
+
+idH1.onclick = () => {
+	idH1.style.color = "red";
+	idH1.style.backgroundColor = "yellow";
+	idH1.textContent = "Você clicou no título!";
+}
+						</code></pre>
+				</section>
+				<section data-transition="fade">
+					<h3>Saida:</h3>
+					<h1 id="titulo-principal">Bem-vindo ao meu site!</h1>
+				</section>
+				<section data-transition="fade">
+					<h2>Diferença entre <code>id</code> e <code>class</code></h2>
+
+					<ul>
+						<li class="fragment fade-in">
+							<strong>ID</strong> – Identifica um elemento <em>único</em> na página.
+						</li>
+						<li class="fragment fade-in">
+							<strong>CLASS</strong> – Pode agrupar <em>vários elementos</em> com o mesmo estilo ou
+							função.
+						</li>
+						<li class="fragment fade-in">
+							Ambos podem ser usados em CSS e JavaScript.
+						</li>
+					</ul>
+
+				</section>
+				<section data-transition="fade">
+					<!-- Exemplo prático -->
+					<div class="fragment fade-in">
+						<pre><code class="language-html">
+&lt;ul&gt;
+	&lt;li class="paragrafo-grupo" &gt; Paragrafo sem estilo especial.&lt;/li&gt;
+	&lt;li class="paragrafo-grupo" &gt; Paragrafo sem estilo especial.&lt;/li&gt;
+	&lt;li class="paragrafo-grupo" &gt; Paragrafo sem estilo especial.&lt;/li&gt;
+	&lt;li class="paragrafo-grupo" &gt; Paragrafo sem estilo especial.&lt;/li&gt;	
+&lt;/ul&gt;
+&lt;button id="botao"&gt;Clique-me&lt;/button&gt;
+						</code></pre>
+					</div>
+					<div class="fragment fade-in">
+						<pre><code class="language-javascript">
+const botao = document.getElementById("botao");
+botao.onclick = alterarParagrafos;
+
+function alterarParagrafos(){
+	const grupos = document.getElementsByClassName("paragrafo-grupo");
+	Array.from(grupos).forEach((grupo, indice) => {
+		grupo.style.color = "blue";
+		grupo.style.fontWeight = "bold";
+		grupo.textContent = `Você alterou o parágrafo ${indice + 1}º do grupo!`;
+	});
+}
+						</code></pre>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Saida</h3>
+					<div>
+						<ul>
+							<li class="paragrafo-grupo">Paragafo sem estilo especial.</li>
+							<li class="paragrafo-grupo">Paragafo sem estilo especial.</li>
+							<li class="paragrafo-grupo">Paragafo sem estilo especial.</li>
+							<li class="paragrafo-grupo">Paragafo sem estilo especial.</li>
+						</ul>
+					</div>
+					<button id="botao">Clique-me</button>
+				</section>
+			</section>
+			<section data-transition="fade">
+				<h1>Dúvidas?</h1>
+			</section>
+			<section data-transition="fade">
+				<h2>Links em HTML</h2>
+				<section data-transition="fade">
+
+
+					<p>O elemento <code>&lt;a&gt;</code> cria links para navegar em outras páginas, seções ou arquivos.
+					</p>
+					<h3 class="fragment fade-in"> Atributos do link </h3>
+					<ul>
+						<li class="fragment fade-in"><strong>href</strong> – Define o destino do link (URL ou âncora
+							interna).</li>
+						<li class="fragment fade-in"><strong>target</strong> – Define onde o link será aberto
+							(<code>_blank</code> para nova aba).</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo - Link que irá abrir para a página do minecraft</h3>
+					<pre><code data-line-numbers>
+&lt;a href="https://www.minecraft.net/pt-br/" &gt;
+	Visite o site do Minecraft!
+&lt;/a&gt;
+						</code></pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<a href="https://www.minecraft.net/pt-br/"> Visite o site do Minecraft!</a>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo 2 - Link que irá abrir nova aba para a página do minecraft</h3>
+					<pre><code data-line-numbers>
+&lt;a href="https://www.minecraft.net/pt-br/" target="_blank" &gt;
+	Visite o site do Minecraft em nova Aba!
+&lt;/a&gt;
+						</code></pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<a href="https://www.minecraft.net/pt-br/" target="_blank"> Visite o site do Minecraft em nova
+							Aba!</a>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo 3 - Link que irá abrir um documento</h3>
+					<pre><code data-line-numbers>
+&lt;a href="./exemplos/aula-3/Demo-aula3-PW.pdf"&gt;
+	Visualizar documento PDF
+&lt;/a&gt;
+						</code></pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<a href="./exemplos/aula-3/Demo-aula3-PW.pdf">Visualizar documento PDF</a>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo 3 - Link que irá baixar um documento</h3>
+					<pre><code data-line-numbers>
+&lt;a href="./exemplos/aula-3/Demo-aula3-PW.pdf" download &gt;
+	Baixar documento PDF
+&lt;/a&gt;
+						</code></pre>
+					<div class="fragment fade-in">
+						<p>Saida:</p>
+						<a href="./exemplos/aula-3/Demo-aula3-PW.pdf" download>Baixar documento PDF</a>
+						<p><strong>NOTE:</strong> para baixar o documento foi necessário usar o atributo
+							<code>download</code>
+						</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h2>Âncoras Internas</h2>
+
+					<p>Você pode criar links que levam a uma seção específica da mesma página usando
+						<code>#id</code>:
+					</p>
+					<ul>
+						<li class="fragment fade-in">Crie um elemento com <code>id</code> único.</li>
+						<li class="fragment fade-in">Use <code>&lt;a href="#id"&gt;</code> para navegar até ele.</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo - Âncoras Internas</h3>
+					<pre><code data-line-numbers>
+						&lt;h1&gt;Página com Âncoras&lt;/h1&gt;
+
+&lt;!-- Menu de Navegação --&gt;
+&lt;nav id="topo" &gt;
+  &lt;a href="#secao1"&gt;Seção 1&lt;/a&gt; | 
+  &lt;a href="#secao2"&gt;Seção 2&lt;/a&gt; | 
+  &lt;a href="#secao3"&gt;Seção 3&lt;/a&gt; | 
+  &lt;a href="#topo"&gt;Voltar ao Topo&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;!-- Seções --&gt;
+&lt;section id="secao1"&gt;
+  &lt;h2&gt;Seção 1&lt;/h2&gt;
+  &lt;p&gt;Este é o conteúdo da seção 1. Aqui mostramos como usar uma âncora para acessar diretamente esta parte da página.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="secao2"&gt;
+  &lt;h2&gt;Seção 2&lt;/h2&gt;
+  &lt;p&gt;Este é o conteúdo da seção 2. Repare que, ao clicar no link correspondente no menu, você é trazido diretamente para cá.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="secao3"&gt;
+  &lt;h2&gt;Seção 3&lt;/h2&gt;
+  &lt;p&gt;Este é o conteúdo da seção 3. As âncoras facilitam a navegação em páginas mais longas.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;!-- Âncora para o topo --&gt;
+&lt;a href="#topo"&gt;&lt;Voltar ao topo/a&gt;
+</code></pre>
+				</section>
+				<section data-transition="fade">
+					<div class="" style="margin-top:2rem;">
+						<iframe src="exemplos/aula-3/exemplo-ancoras.html"
+							style="width: 100%; height: 400px; border: 2px solid #444;background-color: white; border-radius: 8px;">
+						</iframe>
+					</div>
+				</section>
+			</section>
+			<section data-transition="fade">
+				<h3>Imagens em HTML</h3>
+				<section data-transition="fade">
+					<p>A tag <code>&lt;img&gt;</code> é usada para inserir imagens em uma página.</p>
+					<p><strong>Ela é uma tag vazia</strong>, ou seja, não possui conteúdo dentro dela.</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Atributos da &lt;img&gt;</h3>
+					<ul>
+						<li class="fragment fade-in"><code>src</code>: caminho da imagem (local ou URL)</li>
+						<li class="fragment fade-in"><code>alt</code>: texto alternativo (essencial para acessibilidade
+							e SEO)</li>
+						<li class="fragment fade-in"><code>width</code> e <code>height</code>: definem tamanho da imagem
+						</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo de Imagem</h3>
+					<pre><code class="language-html" data-line-numbers>
+&lt;img src="exemplos/aula-3/minecraft.jpeg"
+     alt="Foto de Minecraft"
+     width="300" 
+     height="200"&gt;
+  </code></pre>
+					<div class="fragment fade-in">
+						<h3>Resultado</h3>
+						<img src="exemplos/aula-3/minecraft.jpeg" alt="Foto de Minecraft" width="300" height="200">
+
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Exemplo 2 - Caso tenha errado o caminho da imagem</h3>
+					<pre><code class="language-html" data-line-numbers>
+&lt;img src="exemplos/aula-3/mojang/minecraft.jpeg"
+     alt="Foto de Minecraft"
+     width="300" 
+     height="200"&gt;
+  </code></pre>
+					<div class="fragment fade-in">
+						<h3>Resultado</h3>
+						<img src="exemplos/aula-3/mojang/minecraft.jpeg" alt="Foto de Minecraft" width="300"
+							height="200">
+
+					</div>
+				</section>
+			</section>
+			<section data-transition="fade">
+				<h3>📚 T.P.C: Linha Horizontal</h3>
+				<p>Pesquise sobre a tag <code>&lt;hr&gt;</code> em HTML:</p>
+				<ul>
+					<li>Qual é a função da linha horizontal?</li>
+					<li>Como ela afeta a estrutura visual da página?</li>
+					<li>Crie um pequeno exemplo aplicando uma linha horizontal no meio de um texto.</li>
+				</ul>
+			</section>
+			<section data-transition="fade">
+				<h1>Dúvidas?</h1>
+			</section>
+			<section data-transition="fade">
+				<h2>Exercício Prático 🛠️</h2>
+				<p>Crie seu <strong>mini portfólio</strong> em HTML!</p>
+				<div>
+					<ul>
+						<li class="fragment fade-in">1. Adicione um <strong>título principal</strong> para o portfólio.
+						</li>
+						<li class="fragment fade-in">2. Crie um menu de <strong>navegação</strong> com links internos.
+						</li>
+						<li class="fragment fade-in">3. Faça uma seção <strong>Sobre Mim</strong> com texto e imagem.
+						</li>
+						<li class="fragment fade-in">4. Liste pelo menos <strong>3 projetos</strong> usando listas.</li>
+						<li class="fragment fade-in">5. Adicione links para <strong>Visualizar e Baixar</strong> seu CV.
+						</li>
+						<li class="fragment fade-in">6. Crie uma seção de <strong>Contato</strong> com links (E-mail,
+							GitHub, LinkedIn).</li>
+						<li class="fragment fade-in">7. Finalize com um <strong>rodapé</strong> e link para voltar ao
+							topo.</li>
+						<li class="fragment fade-in" >use a tag section para dividir em secções</li>
+					</ul>
+				</div>
+			</section>
+			<section data-transition="fade">
+				<iframe src="exemplos/aula-3/exercicio-pratico.html"
+					style="width: 100%; height: 400px; border: 2px solid #444;background-color: white; border-radius: 8px;">
+				</iframe>
+			</section>
+		</div>
+		<script>
+			const idH1 = document.getElementById("titulo-principal");
+			idH1.onclick = () => {
+				idH1.style.color = "red";
+				idH1.style.backgroundColor = "yellow";
+				idH1.textContent = "Você clicou no título!";
+			};
+
+			const botao = document.getElementById("botao");
+			botao.onclick = alterarParagrafos;
+
+			function alterarParagrafos() {
+				const grupos = document.getElementsByClassName("paragrafo-grupo");
+				Array.from(grupos).forEach((grupo, indice) => {
+					grupo.style.color = "blue";
+					grupo.style.fontWeight = "bold";
+					grupo.textContent = `Você alterou o parágrafo ${indice + 1}º do grupo!`;
+				});
+			}
+		</script>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Aula 2 - Programação Web</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-M/mgKk5yL5I6f4dfJ5Zgxcm3Yxw6rGZ4v0HGk3zqgN0tPjv1z5c9/zX8vA9v5hPZrmjWqYr41zvWxUVvhQCl4g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide 1 – Boas-vindas -->
+			<section data-transition="fade">
+				<h2>Olá! Bem-vindos à Aula de Programação Web</h2>
+
+				<!-- Fragmentos: itens aparecem um por um -->
+				<ul>
+					<li class="fragment fade-in"><i class="fas fa-user"></i> Nome: Niuro Orlando</li>
+					<li class="fragment fade-in"><i class="fas fa-laptop-code"></i> Fullstack Developer com TypeScript,
+						estudante do 3º ano</li>
+					<li class="fragment fade-in"><i class="fas fa-envelope"></i> Email: <a
+							href="mailto:gabriel.niuro@gmail.com">gabriel.niuro@gmail.com</a></li>
+					<li class="fragment fade-in">
+						<i class="fab fa-github"></i> GitHub: <a href="https://github.com/blaze380"
+							target="_blank">blaze380</a>
+					</li>
+					<li class="fragment fade-in">
+						<i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/niuro-orlando"
+							target="_blank">niuro-orlando</a>
+					</li>
+					<li class="fragment fade-in"><i class="fas fa-phone"></i> Contacto: 857483995</li>
+				</ul>
+			</section>
+			<!-- Slide 2 – Roadmap do curso em cards -->
+			<section data-transition="slide">
+				<h2 style="text-align:center;">O que vamos aprender</h2>
+
+
+				<ul style="
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 0;
+  ">
+					<!-- HTML -->
+					<li class="fragment fade-in" style="text-align:center;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+							alt="HTML" width="80">
+						<p><strong>HTML</strong></p>
+					</li>
+
+					<!-- CSS -->
+					<li class="fragment fade-in" style="text-align:center;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+							alt="CSS" width="80">
+						<p><strong>CSS</strong></p>
+					</li>
+
+					<!-- JavaScript -->
+					<li class="fragment fade-in" style="text-align:center;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+							alt="JavaScript" width="80">
+						<p><strong>JavaScript</strong></p>
+					</li>
+				</ul>
+			</section>
+			<!-- Slide 3 – Comparação entre HTML, CSS e JS -->
+			<section data-transition="slide">
+				<h2 style="text-align:center;">Diferença entre HTML, CSS e JS</h2>
+
+				<div style="text-align:center;">
+					<img src="https://carreiras.totidiversidade.com.br/wp-content/uploads/2024/07/diferenca-entre-html-css-e-javascript-capa-1.jpeg"
+						alt="Comparação HTML, CSS e JS" width="600" class="fragment fade-in">
+				</div>
+			</section>
+			<!-- Slide 4 – Composição de uma tag -->
+			<section data-transition="fade">
+				<section>
+					<h2>Composição de uma Tag HTML</h2>
+					<p>Como uma tag é estruturada?</p>
+					<pre><code data-line-numbers="1|2|3|4">
+						&lt;nome_tag&gt;
+						Conteudo
+						&lt;/nome_tag&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h2>Exemplo:</h2>
+					<pre><code>
+						&lt;p&gt;
+							Olá, Estou reforçando programação Web!
+						&lt;/p&gt;
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Saida:</h2>
+					<p>
+						Olá, Estou reforçando programação Web!
+					</p>
+					</code>
+					</pre>
+				</section>
+			</section>
+
+			<!-- Slide 5 – Estrutura básica de um arquivo HTML -->
+			<section data-transition="fade">
+				<section>
+
+					<h2>Estrutura Básica de um Arquivo HTML</h2>
+
+					<pre><code class="html" data-line-numbers="1-12|2|3-12|4-7|5|6|9-11|10">
+					&lt;!DOCTYPE html&gt;
+					&lt;html lang="pt"&gt;
+					&lt;head&gt;
+						&lt;meta charset="UTF-8"&gt;
+						&lt;title&gt;Meu Primeiro Site&lt;/title&gt;
+					&lt;/head&gt;
+	
+					&lt;body&gt;
+						&lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+					&lt;/body&gt;
+					&lt;/html&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h1>Olá, Mundo!</h1>
+				</section>
+			</section>
+			<section data-transition="slide">
+				<h2>Tags que vamos aprender 🚀</h2>
+				<ul style="font-size:1.4em; line-height:1.8em;">
+					<li class="fragment fade-in"><strong>&lt;h1&gt;...&lt;h6&gt;</strong> → Títulos</li>
+					<li class="fragment fade-in"><strong>&lt;p&gt;</strong> → Parágrafos</li>
+					<li class="fragment fade-in"><strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</strong> → Listas</li>
+				</ul>
+			</section>
+			<section>
+
+				<!-- Section principal: Títulos -->
+				<section>
+					<h2>Tags de Título</h2>
+					<p>Do &lt;h1&gt; ao &lt;h6&gt;, cada nível indica a hierarquia do conteúdo.</p>
+				</section>
+
+				<!-- Subslide 1 – h1 -->
+				<section>
+					<h3>&lt;h1&gt;</h3>
+					<p>Usado para o título principal da página.</p>
+					<pre><code class="html">
+					&lt;h1&gt;Título Principal&lt;/h1&gt;
+  				</code></pre>
+					<div class="fragment fade-in" style="margin-top:10px;">
+						<strong>Visualização:</strong>
+						<h1 style="margin:0;">Título Principal</h1>
+					</div>
+				</section>
+
+				<!-- Subslide 2 – h2 -->
+				<section>
+					<h3>&lt;h2&gt;</h3>
+					<p>Usado para subtítulos, logo abaixo do &lt;h1&gt;.</p>
+					<pre><code class="html">
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+  </code></pre>
+					<strong>Visualização:</strong>
+					<h2 style="margin:0;">Subtítulo</h2>
+				</section>
+
+				<!-- Subslide 3 – h3 -->
+				<section>
+					<h3>&lt;h3&gt;</h3>
+					<p>Nível inferior de subtítulo.</p>
+					<pre><code class="html">
+&lt;h3&gt;Outro Nível&lt;/h3&gt;
+  </code></pre>
+					<strong>Visualização:</strong>
+					<h3 style="margin:0;">Outro Nível</h3>
+				</section>
+
+				<!-- Subslide 4 – h4 até h6 juntos -->
+				<section>
+					<h3>&lt;h4&gt; ... &lt;h6&gt;</h3>
+					<p>Níveis menos utilizados, mas úteis em documentos longos.</p>
+					<pre><code class="html">
+					&lt;h4&gt;Título 4&lt;/h4&gt;
+					&lt;h5&gt;Título 5&lt;/h5&gt;
+					&lt;h6&gt;Título 6&lt;/h6&gt;
+					</code></pre>
+					<strong>Visualização:</strong>
+					<h4 style="margin:0;">Título 4</h4>
+					<h5 style="margin:0;">Título 5</h5>
+					<h6 style="margin:0;">Título 6</h6>
+				</section>
+			</section>
+			<section>
+				<!-- Section principal: Parágrafos -->
+				<section>
+					<h2>Tag &lt;p&gt; – Parágrafos</h2>
+					<p>Usada para representar blocos de texto em HTML.</p>
+				</section>
+
+				<!-- Subslide 1 – Parágrafo simples -->
+				<section>
+					<h3>Exemplo Básico</h3>
+					<pre><code class="html">
+						&lt;p&gt;Este é um parágrafo simples em HTML.&lt;/p&gt;
+						</code></pre>
+					<strong>Visualização:</strong>
+					<p style="margin:0;">Este é um parágrafo simples em HTML.</p>
+				</section>
+
+				<!-- Subslide 2 – Vários parágrafos -->
+				<section>
+					<h3>Múltiplos Parágrafos</h3>
+					<pre><code class="html">
+						&lt;p&gt;Primeiro parágrafo.&lt;/p&gt;
+						&lt;p&gt;Segundo parágrafo.&lt;/p&gt;
+						</code></pre>
+					<strong>Visualização:</strong>
+					<p style="margin:0;">Primeiro parágrafo.</p>
+					<p style="margin:0;">Segundo parágrafo.</p>
+				</section>
+
+				<!-- Subslide 3 – Texto longo -->
+				<section>
+					<h3>Texto Longo</h3>
+					<pre><code class="html">
+					&lt;p&gt;
+					O HTML é a linguagem de marcação usada para estruturar conteúdos na web. 
+					Cada parágrafo pode conter várias frases.
+					&lt;/p&gt;
+					</code></pre>
+					<strong>Visualização:</strong><br>
+					<p>
+						O HTML é a linguagem de marcação usada para estruturar conteúdos na web.
+						Cada parágrafo pode conter várias frases.
+					</p>
+				</section>
+			</section>
+
+
+			<section>
+				<!-- Section principal: Listas -->
+				<section>
+					<h2>Tags de Listas</h2>
+					<p>Usadas para organizar informações em itens.</p>
+					<ul>
+						<li class="fragment fade-in">Listas Ordenadas</li>
+						<li class="fragment fade-in">Listas não Ordenadas</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Composição da Lista</h3>
+					<pre><code class="html" data-line-numbers="1-4|2|3">
+					&lt;ul|ol&gt;
+					&lt;li&gt;Conteudo&lt;/li&gt;
+					&lt;/ul|ol&gt;
+					  </code></pre>
+				</section>
+				<!-- Subslide 1 – Lista não ordenada -->
+				<section>
+					<h3>&lt;ul&gt; – Lista Não Ordenada</h3>
+					<pre><code class="html">
+&lt;ul&gt;
+  &lt;li&gt;Item A&lt;/li&gt;
+  &lt;li&gt;Item B&lt;/li&gt;
+  &lt;li&gt;Item C&lt;/li&gt;
+&lt;/ul&gt;
+  </code></pre>
+					<p>Visualização:</p>
+					<ul style="margin:0; list-style: disc; padding-left:20px;">
+						<li>Item A</li>
+						<li>Item B</li>
+						<li>Item C</li>
+					</ul>
+				</section>
+
+				<!-- Subslide 2 – Lista ordenada -->
+				<section>
+					<h3>&lt;ol&gt; – Lista Ordenada</h3>
+					<pre><code class="html">
+&lt;ol&gt;
+  &lt;li&gt;Passo 1&lt;/li&gt;
+  &lt;li&gt;Passo 2&lt;/li&gt;
+  &lt;li&gt;Passo 3&lt;/li&gt;
+&lt;/ol&gt;
+  </code></pre>
+					<p>Visualização:</p>
+					<ol style="margin:0; padding-left:20px;">
+						<li>Passo 1</li>
+						<li>Passo 2</li>
+						<li>Passo 3</li>
+					</ol>
+				</section>
+
+				<!-- Subslide 3 – Listas aninhadas -->
+				<section>
+					<h3>Listas Aninhadas</h3>
+					<pre><code class="html">
+&lt;ul&gt;
+  &lt;li&gt;Frutas
+    &lt;ul&gt;
+      &lt;li&gt;Maçã&lt;/li&gt;
+      &lt;li&gt;Banana&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Legumes&lt;/li&gt;
+&lt;/ul&gt;
+  </code></pre>
+					<p>Visualização:</p>
+					<ul style="margin:0; list-style: disc; padding-left:20px;">
+						<li>Frutas
+							<ul style="list-style: circle; padding-left:20px;">
+								<li>Maçã</li>
+								<li>Banana</li>
+							</ul>
+						</li>
+						<li>Legumes</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2>Exercício - 1</h2>
+				<p>Com as tags aprendidas, refaça a seguinte página:</p>
+				<div class="" style="margin-top:2rem;">
+					<iframe src="dist/exemplo1.html"
+						style="width: 100%; height: 500px; border: 2px solid #444;background-color: white; border-radius: 8px;">
+					</iframe>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
